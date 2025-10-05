@@ -1,0 +1,23 @@
+name: build java application
+on:
+ push:
+  branches:
+   - master
+jobs:
+  buildjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v5
+      - name: Install nodejs
+        uses: actions/setup-node@v5
+        with:
+          node-version: '18'
+          ##distribution: 'temurin'
+          cache: 'npm'
+      - name: install the dependencies
+        run: npm ci
+      - name: RUn tests
+        run: npm tests
+      - name: build code
+        run: npm run build
