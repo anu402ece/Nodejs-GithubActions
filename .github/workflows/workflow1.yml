@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: my-file
-         ##path:         
+         path: /home/runner/work/Nodejs-GithubActions/Nodejs-GithubActions/test.json        
